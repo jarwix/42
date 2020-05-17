@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpadisha <oazisrus@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/30 01:41:08 by lpadisha          #+#    #+#             */
-/*   Updated: 2020/05/14 22:11:37 by lpadisha         ###   ########.fr       */
+/*   Created: 2020/05/08 01:44:47 by lpadisha          #+#    #+#             */
+/*   Updated: 2020/05/14 23:10:53 by lpadisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	int	i;
-	int	ch;
-	int	negative;
+	unsigned char		*tmp1;
+	const unsigned char	*tmp2;
+	size_t				i;
 
-	ch = 0;
 	i = 0;
-	while ((str[i]) && ((((str[i] >= 9) && (str[i] <= 13)) || (str[i] == 32))))
-		i++;
-	negative = 1;
-	if (str[i] == '-')
-		negative = -1;
-	if ((str[i] == '+') || (str[i] == '-'))
-		i++;
-	while ((str[i]) && (str[i] >= '0') && (str[i] <= '9'))
+	tmp1 = (unsigned char*)dst;
+	tmp2 = (unsigned char*)src;
+	while (i < n)
 	{
-		ch = ch * 10 + (str[i] - '0');
+		tmp1[i] = tmp2[i];
+		if (tmp1[i] == (unsigned char)c)
+			return ((void*)(dst + i + 1));
 		i++;
 	}
-	return (ch * negative);
+	return (NULL);
 }

@@ -1,36 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpadisha <oazisrus@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/30 01:41:08 by lpadisha          #+#    #+#             */
-/*   Updated: 2020/05/14 22:11:37 by lpadisha         ###   ########.fr       */
+/*   Created: 2020/05/08 01:56:28 by lpadisha          #+#    #+#             */
+/*   Updated: 2020/05/17 04:08:39 by lpadisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+void	*ft_memmove(void *dest, const void *src, size_t len)
 {
-	int	i;
-	int	ch;
-	int	negative;
+	size_t				i;
+	unsigned char		*tmp1;
+	const unsigned char	*tmp2;
 
-	ch = 0;
-	i = 0;
-	while ((str[i]) && ((((str[i] >= 9) && (str[i] <= 13)) || (str[i] == 32))))
-		i++;
-	negative = 1;
-	if (str[i] == '-')
-		negative = -1;
-	if ((str[i] == '+') || (str[i] == '-'))
-		i++;
-	while ((str[i]) && (str[i] >= '0') && (str[i] <= '9'))
+	i = 1;
+	tmp1 = (unsigned char *)dest;
+	tmp2 = (unsigned char *)src;
+	if (tmp2 < tmp1)
+		while (i <= len)
+		{
+			tmp1[len - i] = tmp2[len - i];
+			i++;
+		}
+	else
 	{
-		ch = ch * 10 + (str[i] - '0');
-		i++;
+		i = 0;
+		while (i < len)
+		{
+			tmp1[i] = tmp2[i];
+			i++;
+		}
 	}
-	return (ch * negative);
+	return (dest);
 }
