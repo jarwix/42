@@ -1,21 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_islower.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpadisha <oazisrus@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/30 19:11:29 by lpadisha          #+#    #+#             */
-/*   Updated: 2020/05/20 03:16:27 by lpadisha         ###   ########.fr       */
+/*   Created: 2020/05/19 05:11:27 by lpadisha          #+#    #+#             */
+/*   Updated: 2020/05/20 00:27:55 by lpadisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_islower(int c)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	if ((c >= 'a') && (c <= 'z'))
-		return (1);
-	else
-		return (0);
+	size_t	i;
+	size_t	j;
+	char	*temp;
+	char	*to_return;
+
+	if ((!s1) || (!set))
+		return (NULL);
+	temp = s1;
+	i = 0;
+	while (s1[i])
+		i++;
+	j = 0;
+	while (set[j])
+		j++;
+	if (i < j)
+		return (NULL);
+	while(ls
+
+
 }

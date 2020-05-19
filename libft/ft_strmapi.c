@@ -1,21 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_islower.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpadisha <oazisrus@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/30 19:11:29 by lpadisha          #+#    #+#             */
-/*   Updated: 2020/05/20 03:16:27 by lpadisha         ###   ########.fr       */
+/*   Created: 2020/05/20 00:28:51 by lpadisha          #+#    #+#             */
+/*   Updated: 2020/05/20 00:29:31 by lpadisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_islower(int c)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	if ((c >= 'a') && (c <= 'z'))
-		return (1);
-	else
-		return (0);
+
 }

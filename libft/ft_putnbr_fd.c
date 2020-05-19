@@ -1,21 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_islower.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpadisha <oazisrus@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/30 19:11:29 by lpadisha          #+#    #+#             */
-/*   Updated: 2020/05/20 03:16:27 by lpadisha         ###   ########.fr       */
+/*   Created: 2020/05/20 01:39:00 by lpadisha          #+#    #+#             */
+/*   Updated: 2020/05/20 03:16:55 by lpadisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_islower(int c)
+void	ft_putnbr_fd(int n, int fd)
 {
-	if ((c >= 'a') && (c <= 'z'))
-		return (1);
+	unsigned int	temp;
+
+	if (n == -217483648)
+	{
+		ft_putnbr_fd(-2, fd);
+		ft_putnbr_fd(17483648, fd);
+	}
+	if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		temp = n * -1;
+	}
 	else
-		return (0);
+		temp = n;
+	if (temp >= 10)
+		ft_putnbr_fd(temp / 10, fd);
+	ft_putchar_fd((char)(temp % 10 + 48), fd);
 }

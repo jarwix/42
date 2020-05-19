@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_islower.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpadisha <oazisrus@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/30 19:11:29 by lpadisha          #+#    #+#             */
-/*   Updated: 2020/05/20 03:16:27 by lpadisha         ###   ########.fr       */
+/*   Created: 2020/05/20 00:38:19 by lpadisha          #+#    #+#             */
+/*   Updated: 2020/05/20 03:15:33 by lpadisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_islower(int c)
+void	ft_putstr_fd(char *s, int fd)
 {
-	if ((c >= 'a') && (c <= 'z'))
-		return (1);
-	else
-		return (0);
+	size_t	i;
+
+	i = 0;
+	while (s[i])
+	{
+		ft_putchar_fd(s[i], fd);
+		i++;
+	}
 }
