@@ -6,7 +6,7 @@
 /*   By: lpadisha <oazisrus@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/20 00:38:19 by lpadisha          #+#    #+#             */
-/*   Updated: 2020/05/20 03:15:33 by lpadisha         ###   ########.fr       */
+/*   Updated: 2020/05/20 18:04:51 by lpadisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_putstr_fd(char *s, int fd)
 {
 	size_t	i;
 
+	if (!s || fd < 0)
+		return ;
 	i = 0;
 	while (s[i])
 	{

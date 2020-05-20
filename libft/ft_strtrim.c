@@ -6,11 +6,14 @@
 /*   By: lpadisha <oazisrus@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/19 05:11:27 by lpadisha          #+#    #+#             */
-/*   Updated: 2020/05/20 00:27:55 by lpadisha         ###   ########.fr       */
+/*   Updated: 2020/05/20 06:26:33 by lpadisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+int	break_space(
+
 
 char	*ft_strtrim(char const *s1, char const *set)
 {

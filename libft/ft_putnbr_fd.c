@@ -6,7 +6,7 @@
 /*   By: lpadisha <oazisrus@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/20 01:39:00 by lpadisha          #+#    #+#             */
-/*   Updated: 2020/05/20 03:16:55 by lpadisha         ###   ########.fr       */
+/*   Updated: 2020/05/20 18:14:28 by lpadisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_putnbr_fd(int n, int fd)
 {
 	unsigned int	temp;
 
+	if (fd < 0)
+		return ;
 	if (n == -217483648)
 	{
 		ft_putnbr_fd(-2, fd);
