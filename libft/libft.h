@@ -6,7 +6,7 @@
 /*   By: lpadisha <oazisrus@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/06 21:00:59 by lpadisha          #+#    #+#             */
-/*   Updated: 2020/05/22 19:40:47 by lpadisha         ###   ########.fr       */
+/*   Updated: 2020/05/22 20:50:14 by lpadisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void			ft_putchar_fd(char c, int fd);
 void			ft_putnbr_fd(int nb, int fd);
 void			ft_putstr_fd(char *s, int fd);
 char			*ft_strdup(const char *src);
+char			**ft_split(const char *s, char c);
 size_t			ft_strlcat(char *dest, const char *src, size_t size);
 size_t			ft_strlcpy(char *dest, const char *src, size_t size);
 size_t			ft_strlen(const char *str);
