@@ -6,7 +6,7 @@
 /*   By: lpadisha <oazisrus@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 23:22:14 by lpadisha          #+#    #+#             */
-/*   Updated: 2020/05/17 23:47:51 by lpadisha         ###   ########.fr       */
+/*   Updated: 2020/05/22 06:44:20 by lpadisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ char	*ft_strdup(const char *s)
 		temp[i] = s[i];
 		i++;
 	}
+	temp[i] = '\0';
 	return (temp);
 }

@@ -6,7 +6,7 @@
 /*   By: lpadisha <oazisrus@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/20 00:28:51 by lpadisha          #+#    #+#             */
-/*   Updated: 2020/05/20 05:41:50 by lpadisha         ###   ########.fr       */
+/*   Updated: 2020/05/22 06:58:04 by lpadisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	*temp;
-	int		i;
+	char				*temp;
+	unsigned int		i;
 
 	if (!s || !f)
 		return (NULL);
+	i = 0;
 	while (s[i])
 		i++;
 	if (!(temp = (char *)malloc(sizeof(char) * (i + 1))))

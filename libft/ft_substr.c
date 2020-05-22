@@ -6,7 +6,7 @@
 /*   By: lpadisha <oazisrus@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 22:40:53 by lpadisha          #+#    #+#             */
-/*   Updated: 2020/05/20 03:13:48 by lpadisha         ###   ########.fr       */
+/*   Updated: 2020/05/22 06:54:49 by lpadisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t			size;
 
 	i = 0;
+	if (!s)
+		return (NULL);
 	while (s[i])
 		i++;
-	if (i < start || len == 0 || !s)
+	if (i < start || len == 0)
 		return (ft_strdup(""));
 	size = start + i;
 	if (size < len)
