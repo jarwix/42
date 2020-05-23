@@ -6,7 +6,7 @@
 /*   By: lpadisha <oazisrus@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/30 01:41:08 by lpadisha          #+#    #+#             */
-/*   Updated: 2020/05/23 07:30:07 by lpadisha         ###   ########.fr       */
+/*   Updated: 2020/05/24 00:36:26 by lpadisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,13 @@ int		check_num(unsigned long long num, int negative)
 		else
 			return (0);
 	}
-	else 
-		return ((int)num * negative);
+	return ((int)num * negative);
 }
 
 int		ft_atoi(const char *str)
 {
-	int								i;
-	int								negative;
+	int						i;
+	int						negative;
 	unsigned long long		ch;
 
 	ch = 0;
