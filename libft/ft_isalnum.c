@@ -6,7 +6,7 @@
 /*   By: lpadisha <oazisrus@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 20:38:13 by lpadisha          #+#    #+#             */
-/*   Updated: 2020/05/14 22:12:02 by lpadisha         ###   ########.fr       */
+/*   Updated: 2020/05/23 04:55:40 by lpadisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 int	ft_isalnum(int ch)
 {
-	return ((ft_isalpha(ch)) || ft_isdigit(ch));
+	if ((ft_isalpha(ch)) || ft_isdigit(ch))
+		return (1);
+	return (0);
 }

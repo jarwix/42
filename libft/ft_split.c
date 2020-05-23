@@ -6,17 +6,18 @@
 /*   By: lpadisha <oazisrus@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/20 00:28:02 by lpadisha          #+#    #+#             */
-/*   Updated: 2020/05/22 20:49:52 by lpadisha         ###   ########.fr       */
+/*   Updated: 2020/05/23 06:12:03 by lpadisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		**malloc_free(char **temp)
+char	**malloc_free(char **temp)
 {
 	unsigned int	i;
 
-	while(temp[i])
+	i = 0;
+	while (temp[i])
 	{
 		free(temp[i]);
 		i++;
@@ -45,7 +46,7 @@ int		numbers_of_lines(char const *s, char c)
 	return (numbers);
 }
 
-void		ft_sp(char const *s, char *tmp_l, unsigned int i, unsigned int j)
+void	ft_sp(char const *s, char *tmp_l, unsigned int i, unsigned int j)
 {
 	unsigned int		m;
 
@@ -55,7 +56,7 @@ void		ft_sp(char const *s, char *tmp_l, unsigned int i, unsigned int j)
 	tmp_l[m] = '\0';
 }
 
-char		**ft_split_end(char const *s, char c, char **tmp)
+char	**ft_split_end(char const *s, char c, char **tmp)
 {
 	unsigned int		i;
 	unsigned int		j;
@@ -81,19 +82,20 @@ char		**ft_split_end(char const *s, char c, char **tmp)
 		while (s[i] && s[i] == c)
 			i++;
 	}
-	tmp[l] = '\0';
 	return (tmp);
 }
 
-char		**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char				**temp;
 	unsigned int		number_lines;
-	
+
 	if (!s)
 		return (NULL);
 	number_lines = numbers_of_lines(s, c);
 	if (!(temp = (char **)malloc(sizeof(char *) * (number_lines + 1))))
 		return (NULL);
-	return (ft_split_end(s, c, temp));
+	ft_split_end(s, c, temp);
+	temp[number_lines] = NULL;
+	return (temp);
 }

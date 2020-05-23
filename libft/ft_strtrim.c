@@ -6,7 +6,7 @@
 /*   By: lpadisha <oazisrus@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/19 05:11:27 by lpadisha          #+#    #+#             */
-/*   Updated: 2020/05/21 05:55:19 by lpadisha         ###   ########.fr       */
+/*   Updated: 2020/05/23 22:35:51 by lpadisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ int		delete_chars(char sc, char const *c)
 	return (0);
 }
 
-int		size_return(char const *s1, int i, int j)
+int		size_return(int i, int j)
 {
 	int			s;
 
-	if (i == j || !*s1)
+	if (i == j)
 		s = 2;
 	else if (i < j)
 		s = 1;
@@ -43,16 +43,18 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int			j;
 	int			size;
 
-	if ((!s1) || (!set))
-		return (NULL);
 	i = 0;
 	j = 0;
+	if (!s1)
+		return (NULL);
+	if (!set)
+		return (ft_strdup(s1));
 	while (s1[j] && delete_chars(s1[j], set))
 		j++;
-	if ((i = strlen(s1) - 1) != -1)
+	if ((i = ft_strlen(s1) - 1) != -1)
 		while (i >= 0 && delete_chars(s1[i], set))
 			i--;
-	size = size_return(s1, i, j);
+	size = size_return(i, j);
 	if (!(temp = (char *)malloc(sizeof(char) * size)))
 		return (NULL);
 	i = 0;

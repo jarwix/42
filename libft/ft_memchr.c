@@ -6,12 +6,11 @@
 /*   By: lpadisha <oazisrus@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/10 00:53:53 by lpadisha          #+#    #+#             */
-/*   Updated: 2020/05/10 20:47:19 by lpadisha         ###   ########.fr       */
+/*   Updated: 2020/05/22 23:21:42 by lpadisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {

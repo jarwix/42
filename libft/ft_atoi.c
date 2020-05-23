@@ -6,17 +6,32 @@
 /*   By: lpadisha <oazisrus@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/30 01:41:08 by lpadisha          #+#    #+#             */
-/*   Updated: 2020/05/14 22:11:37 by lpadisha         ###   ########.fr       */
+/*   Updated: 2020/05/23 07:30:07 by lpadisha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+int		check_num(unsigned long long num, int negative)
 {
-	int	i;
-	int	ch;
-	int	negative;
+	if (num == 2147483648 && negative == -1)
+		return ((int)num * negative);
+	if (num > 2147483647)
+	{
+		if (negative == 1)
+			return (-1);
+		else
+			return (0);
+	}
+	else 
+		return ((int)num * negative);
+}
+
+int		ft_atoi(const char *str)
+{
+	int								i;
+	int								negative;
+	unsigned long long		ch;
 
 	ch = 0;
 	i = 0;
@@ -32,5 +47,5 @@ int	ft_atoi(const char *str)
 		ch = ch * 10 + (str[i] - '0');
 		i++;
 	}
-	return (ch * negative);
+	return (check_num(ch, negative));
 }
