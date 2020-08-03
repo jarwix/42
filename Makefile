@@ -6,11 +6,11 @@
 #    By: lpadisha <oazisrus@gmail.com>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/14 00:41:39 by lpadisha          #+#    #+#              #
-#    Updated: 2020/05/24 01:45:47 by lpadisha         ###   ########.fr        #
+#    Updated: 2020/06/12 06:00:55 by lpadisha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-.PHONY = all clean fclean re so
+.PHONY = all clean fclean re so bonus
 
 NAME=libft.a
 
@@ -22,7 +22,12 @@ ft_toupper.c ft_tolower.c ft_strdup.c ft_calloc.c ft_substr.c \
 ft_strjoin.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
 ft_putnbr_fd.c ft_itoa.c ft_strmapi.c ft_strtrim.c ft_split.c
 
+SRCS_bonus=ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
+ft_lstdelone.c ft_lstclear.c ft_lstiter.c #ft_lstmap.c
+
 OBJECTS=$(SRCS:.c=.o)
+
+OBJECTS_bonus=$(SRCS_bonus:.c=.o)
 
 INCLUDES=./
 
@@ -37,8 +42,14 @@ so:
 	gcc -fPIC -Wall -Wextra -Werror -c $(SRCS) 
 	gcc $(OBJECTS) -shared -o libft.so
 
+bonus:
+	gcc -Wall -Wextra -Werror -I$(INCLUDES) -c $(SRCS_bonus)
+	ar rc $(NAME) $(OBJECTS_bonus)
+	ranlib $(NAME)
+
 clean:
 	/bin/rm -f $(OBJECTS)
+	/bin/rm -f $(OBJECTS_bonus)
 
 fclean:	clean
 	/bin/rm -f $(NAME)
